@@ -70,42 +70,9 @@
       </section>
 
       <section id="contacto">
-        <h2>Formulario de contacto</h2>
-        <form method="post" action="/">
-          <fieldset>
-            <legend>Información personal</legend>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" placeholder="Tu nombre" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
-          </fieldset>
-          <fieldset>
-            <legend>Otros</legend>
-            <div>
-              <label for="why">Motivo de contacto:</label>
-              <select id="why">
-                <option value="1">Trabajo</option>
-                <option value="2">Consulta</option>
-                <option value="3">Otros</option>
-              </select>
-            </div>
-            <div>
-              <label for="terms">Acepta los términos</label>
-              <input type="checkbox" id="terms" required>
-            </div>
-            <div>
-              <datalist id="lang">
-                <option value="JavaScript">
-                <option value="Python">
-                <option value="C++">
-              </datalist>
-              <label>¿En qué lenguaje necesitas ayuda?</label>
-              <input list="lang" name="lang">
-            </div>
-          </fieldset>
-          <input type="submit" value="Enviar contacto">
-        </form>
+        <h2>Contacto</h2>
+        <p>¿Quieres ponerte en contacto conmigo?</p>
+        <button id="show">Abrir formulario de contacto</button>
       </section>
 
       <section id="faq">
@@ -127,5 +94,50 @@
       </section>
 
     </main>
+
+    <dialog id="modal">
+      <h1>Formulario de contacto</h1>
+      <form method="post" action="/">
+        <fieldset>
+          <legend>Información personal</legend>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" placeholder="Tu nombre" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
+        </fieldset>
+        <fieldset>
+          <legend>Otros</legend>
+          <div>
+            <label for="why">Motivo de contacto:</label>
+            <select id="why">
+              <option value="1">Trabajo</option>
+              <option value="2">Consulta</option>
+              <option value="3">Otros</option>
+            </select>
+          </div>
+          <div>
+            <label for="terms">Acepta los términos</label>
+            <input type="checkbox" id="terms" required>
+          </div>
+          <div>
+            <datalist id="lang">
+              <option value="JavaScript">
+              <option value="Python">
+              <option value="C++">
+            </datalist>
+            <label>¿En qué lenguaje necesitas ayuda?</label>
+            <input list="lang" name="lang">
+          </div>
+        </fieldset>
+        <input type="submit" value="Enviar contacto">
+        <button type="button" id="cerrar">Cerrar</button>
+      </form>
+    </dialog>
+
+    <script>
+      window.show.addEventListener('click',()=>{ window.modal.showModal() });
+      window.cerrar.addEventListener('click',()=>{ window.modal.close() });
+    </script>
   </body>
 </html>
